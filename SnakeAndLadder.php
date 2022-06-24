@@ -1,5 +1,6 @@
 <?php
-/*UC4:repeat till the player reaches winning position 100
+/*UC5:Ensure the player gets to exact winning position 100. 
+ Note in case the player position go above 100 the player remins at previous position
 Player checks for the option like ladder,snake bite and no play.
 Roll the dice to getting random numbers.
 */
@@ -45,7 +46,7 @@ class SnakeLadder{
                         }
                         elseif($this->startPosition == 100){
                             echo "Previous Position : $this->previousPosition & StartPosition : $this->startPosition \n";
-                            echo "Player won the game....\n *****GAME OVER*****";
+                            echo "Player won the game....\n ******GAME OVER********";
                         }
                         break;
     
@@ -60,13 +61,11 @@ class SnakeLadder{
                 }
             } 
        }
-       
- 
- $game = new SnakeLadder();//create object
- $game->welcome();//calling function
- while($game->startPosition < 100){
- $game->RollDice();
- $Check = $game->Options();
- $game->NextMove($Check);
- }  
- ?>
+    $game = new SnakeLadder();//create object
+    $game->welcome();//calling function
+    while($game->startPosition < 100){
+    $game->RollDice();
+    $Check = $game->Options();
+    $game->NextMove($Check);
+    }  
+    ?>
